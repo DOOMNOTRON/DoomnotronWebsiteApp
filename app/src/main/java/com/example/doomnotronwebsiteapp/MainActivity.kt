@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         webSettings.javaScriptEnabled = true
         mWebView.webViewClient = WebViewClient()
 
+        // enable the go back button
         mWebView.canGoBack()
         mWebView.setOnKeyListener(View.OnKeyListener { view, i, keyEvent ->
             if (i == KeyEvent.KEYCODE_BACK

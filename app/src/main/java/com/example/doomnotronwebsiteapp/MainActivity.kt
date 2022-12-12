@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         val webSettings = mWebView.settings
         webSettings.loadsImagesAutomatically = true
         webSettings.javaScriptEnabled = true
+        // force links to open in the webview
         mWebView.webViewClient = WebViewClient()
 
         // Enable responsive layout
@@ -32,9 +33,6 @@ class MainActivity : AppCompatActivity() {
         mWebView.getSettings().setSupportZoom(true)
         mWebView.getSettings().setBuiltInZoomControls(true) // allow pinch to zoom
         mWebView.getSettings().setDisplayZoomControls(false) // disable the default zoom controls on the page
-
-        // saved instance state
-
 
         // enable the go back button
         mWebView.canGoBack()

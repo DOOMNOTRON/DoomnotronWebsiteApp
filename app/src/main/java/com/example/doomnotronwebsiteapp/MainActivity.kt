@@ -19,8 +19,22 @@ class MainActivity : AppCompatActivity() {
 
         // Enable Javascript
         val webSettings = mWebView.settings
+        webSettings.loadsImagesAutomatically = true
         webSettings.javaScriptEnabled = true
         mWebView.webViewClient = WebViewClient()
+
+        // Enable responsive layout
+        mWebView.getSettings().setUseWideViewPort(true)
+        // Zoom out if the content width is greater than the width of the viewport
+        mWebView.getSettings().setLoadWithOverviewMode(true)
+
+        // enabled zoom in controls
+        mWebView.getSettings().setSupportZoom(true)
+        mWebView.getSettings().setBuiltInZoomControls(true) // allow pinch to zoom
+        mWebView.getSettings().setDisplayZoomControls(false) // disable the default zoom controls on the page
+
+        // saved instance state
+
 
         // enable the go back button
         mWebView.canGoBack()
